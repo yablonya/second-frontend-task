@@ -1,8 +1,31 @@
-.card__container {
-    width: 300px;
-    height: 150px;
+.card_container {
     background-color: antiquewhite;
     border-radius: 20px;
     margin: 0 20px 15px;
     padding: 20px 30px;
+    display: flex;
+    min-width: 400px;
+}
+
+.card_picture {
+    border-radius: 10px;
+}
+
+.card_text {
+    border-left: 2px solid sandybrown;
+    margin-left: 15px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card_text h3 {
+    max-width: 170px;
+    margin: 5px 0;
+}
+
+.card_text p {
+    max-width: 170px;
+    margin-top: 10px;
 }
