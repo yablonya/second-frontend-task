@@ -1,0 +1,13 @@
+.ingredients_block {
+    border: 3px solid #3cb371;
+    border-radius: 20px;
+    padding: 15px 40px 15px 50px;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.ingredients_block ul {
+    list-style-type: circle;
+    margin: 0;
+    padding: 0;
+}
