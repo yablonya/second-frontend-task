@@ -1,5 +1,7 @@
 import DishInfo from "@/components/DishInfo";
 import axios from "axios";
+import Head from "next/head";
+
 
 export const getDishById = async ({params}) => {
   const {id} = params;
@@ -12,7 +14,12 @@ const DishPage = async ({params}) => {
   const dish = await getDishById({params});
 
   return (
-    <DishInfo dish={dish}/>
+    <>
+      <Head>
+        <title>{dish.strMeal}</title>
+      </Head>
+      <DishInfo dish={dish}/>
+    </>
   )
 }
 

@@ -1,7 +1,8 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    background-color: #287b4b;
+    background-color: #35a064;
     padding: 25px 0;
     margin-bottom: 35px;
+    font-size: 30px;
 }

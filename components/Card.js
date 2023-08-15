@@ -7,9 +7,10 @@ export default function Card(props) {
     <div className={styles.card_container}>
       <img src={props.mealThumb} width="200" height="200" alt="meal" className={styles.card_picture}/>
       <div className={styles.card_text}>
-        <Link href={`/${props.id}`}><h3>{props.meal}</h3></Link>
-        <p>{props.category}</p>
-        {props.tags !== null ? <p>{props.tags.replace(/,/g, ', ')}</p> : null}
+        <h3>{props.meal}</h3>
+        <p><b>Category:</b> {props.category}</p>
+        {props.tags !== null ? <p><b>Tags:</b> {props.tags.replace(/,/g, ', ')}</p> : null}
+        <Link href={`/${props.id}`} className={styles.recipe_link}>Recipe</Link>
       </div>
     </div>
   )
