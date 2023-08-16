@@ -1,4 +1,4 @@
-import styles from "@/styles/Recipe.module.css"
+import styles from "@/components/recipe/Recipe.module.css"
 
 const Recipe = ({recipe}) => {
   return (
