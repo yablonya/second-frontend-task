@@ -3,11 +3,17 @@ import spoon from "@/public/spoon.png"
 import Ingredients from "@/components/ingredients/Ingredients";
 import Recipe from "@/components/recipe/Recipe";
 import {getListOfParams} from "@/lib/api";
+import {Dish} from "@/types/Dish";
+import {FC} from "react";
 
-const DishInfo = ({dish}) => {
+interface DishInfoProps {
+    dish: Dish,
+}
+
+const DishInfo:FC<DishInfoProps> = ({dish}) => {
   const { strMeal, strCategory, strTags, strArea, strInstructions} = dish || {};
-  const ingredientsArr = getListOfParams(dish, "Ingredient");
-  const measuresArr = getListOfParams(dish, "Measure");
+  const ingredientsArr: [string, string | unknown][] = getListOfParams(dish, "Ingredient");
+  const measuresArr: [string, string | unknown][] = getListOfParams(dish, "Measure");
 
   return (
     <div className={styles.wrapper}>

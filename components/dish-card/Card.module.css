@@ -23,10 +23,10 @@
     justify-content: space-between;
 }
 
-.card_text h3 {
+.card_text h2 {
     max-width: 100%;
     font-size: 20px;
-    margin: 7px 0 5px;
+    margin: 10px 0 0;
 }
 
 .card_text p {

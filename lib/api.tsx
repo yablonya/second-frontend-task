@@ -15,7 +15,7 @@ export const getDishById = async ({params}) => {
   }
 }
 
-export const getListOfParams = (dish, keyWord) => {
+export const getListOfParams = (dish, keyWord: string) => {
   const arrFromObj = Object.entries(dish);
   return arrFromObj.filter(item => item[0].includes(keyWord) && item[1]);
 }
