@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.page_button {
+    color: #35a064;
+    border: 2px solid #35a064;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 0 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.current_page_button {
+    background-color: #35a064;
+    color: white;
+    border: 2px solid #35a064;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 0 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
