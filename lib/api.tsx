@@ -3,7 +3,9 @@ import axios from "axios";
 export const getAllDishes = async () => {
   const response = await axios.get('https://www.themealdb.com/api/json/v1/1/search.php?f=b');
 
-  return response.data.meals;
+  if (response.data.meals !== null) {
+    return response.data.meals;
+  }
 }
 
 export const getDishById = async ({params}) => {
