@@ -1,31 +1,29 @@
-.wrapper {
-    margin: 20px 120px;
-    color: black;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
 
-.introduce_block {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
-.introduce_block h1 {
-    font-size: 35px;
+.introduce_block h4 {
+    font-family: 'Nunito', sans-serif;
     padding: 15px 15px 10px;
     font-weight: 600;
 }
 
-.introduce_block h3 {
+.introduce_block h6 {
     background-color: #d4eedf;
+    font-family: 'Nunito', sans-serif;
     border-radius: 10px;
     padding: 7px 25px 7px 15px;
     margin-top: 15px;
     font-size: 22px;
 }
 
-.recipe_ingredients_block {
+.video {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 30px
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px){
+    .video, .ingredients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -1,8 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+@keyframes move {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.underline_left, .underline_right {
+    position: relative;
+}
+
+.underline_right::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center left;
+    animation: move 1s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
+.underline_left::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center right;
+    animation: move 1s ease-in-out forwards;
+    animation-delay: 0.8s;
+}
+
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #35a064;
     padding: 25px 0;
     margin-bottom: 35px;
     font-size: 30px;
+}
+.wrapper h4 {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    width: 60px;
+    height: 60px;
+    margin: 0 20px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 748px){
+    .image {
+        margin: 0 500px;
+    }
+
+    .puzatka {
+        margin: 0;
+    }
 }

@@ -1,10 +1,10 @@
 import styles from "@/components/dish-info/DishInfo.module.css";
-import spoon from "@/public/spoon.png"
 import Ingredients from "@/components/ingredients/Ingredients";
 import Recipe from "@/components/recipe/Recipe";
 import {getListOfParams} from "@/lib/api";
 import {Dish} from "@/types/Dish";
 import {FC} from "react";
+import {Box, Container, Grid, Typography} from "@mui/material";
 
 interface DishInfoProps {
     dish: Dish,
@@ -16,31 +16,36 @@ const DishInfo:FC<DishInfoProps> = ({dish}) => {
   const measuresArr: [string, string | unknown][] = getListOfParams(dish, "Measure");
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.introduce_block}>
-        <iframe
-          width={600}
-          height={340}
-          src="https://www.youtube.com/embed/gtQSr18yQz0"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        ></iframe>
+    <Container sx={{color: "black"}}>
+      <Grid flexWrap container column={{sm: 1, md: 2, lg: 2}} rowSpacing={4} columnSpacing={{md: 3, lg: 6}}>
+        <Grid item sm={12} md={12} lg={4} className={styles.introduce_block} >
+          <Box>
+            <Typography variant="h4">{strMeal}</Typography>
+            <Typography variant="h6">Category: {strCategory}</Typography>
+            {strTags !== null ? <Typography variant="h6"><b>Tags:</b> {strTags.replace(/,/g, ', ')}</Typography> : null}
+            {strArea !== null ? <Typography variant="h6"><b>Area:</b> {strArea}</Typography> : null}
+          </Box>
+        </Grid>
 
-        <div style={{maxWidth: 500, marginLeft: 100}}>
-          <h1>{strMeal}</h1>
-          <h3>Category: {strCategory}</h3>
-          {strTags !== null ? <h3><b>Tags:</b> {strTags.replace(/,/g, ', ')}</h3> : null}
-          {strArea !== null ? <h3><b>Area:</b> {strArea}</h3> : null}
-        </div>
+        <Grid item xs={12} sm={12} md={7} lg={8} className={styles.video}>
+          <iframe
+            width={600}
+            height={340}
+            src="https://www.youtube.com/embed/gtQSr18yQz0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </Grid>
 
-        {/*<img src={spoon} width={200} height={200} alt="meal"/>*/}
-      </div>
+        <Grid item xs={12} sm={12} md={5} lg={4} className={styles.ingredients}>
+          <Ingredients ingredients={ingredientsArr} measures={measuresArr}/>
+        </Grid>
 
-      <div className={styles.recipe_ingredients_block}>
-        <Ingredients ingredients={ingredientsArr} measures={measuresArr}/>
-        <Recipe recipe={strInstructions}/>
-      </div>
-    </div>
+        <Grid item xs={12} sm={12} md={12} lg={8}>
+          <Recipe recipe={strInstructions}/>
+        </Grid>
+      </Grid>
+    </Container>
   )
 }
 

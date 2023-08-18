@@ -1,5 +1,6 @@
 import styles from "@/components/pagination-block/PaginationBlock.module.css"
 import {FC} from "react";
+import {List, ListItem} from "@mui/material";
 
 interface PaginationBlockProps {
   numOfPages: number,
@@ -11,15 +12,15 @@ const PaginationBlock:FC<PaginationBlockProps> = ({numOfPages, currentPage, setC
   const numbers = [...Array(numOfPages + 1).keys()].slice(1)
 
   return (
-    <div className={styles.container}>
+    <List className={styles.container}>
       {numbers && numbers.map((num) => (
-        <div
+        <ListItem
             key={num}
             className={currentPage === num ? styles.current_page_button : styles.page_button}
             onClick={() => setCurrentPage(num)}
-        >{num}</div>
+        >{num}</ListItem>
       ))}
-    </div>
+    </List>
   )
 }
 

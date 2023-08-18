@@ -5,9 +5,9 @@ const DishPage = async ({params}) => {
   const dish = await getDishById({params}) || {};
 
   return (
-    <>
+    <div>
       <DishInfo dish={dish}/>
-    </>
+    </div>
   )
 }
 
