@@ -17,7 +17,7 @@ const DishInfo:FC<DishInfoProps> = ({dish}) => {
 
   return (
     <Container sx={{color: "black"}}>
-      <Grid flexWrap container column={{sm: 1, md: 2, lg: 2}} rowSpacing={4} columnSpacing={{md: 3, lg: 6}}>
+      <Grid container column={{sm: 1, md: 2, lg: 2}} rowSpacing={4} columnSpacing={{md: 3, lg: 6}}>
         <Grid item sm={12} md={12} lg={4} className={styles.introduce_block} >
           <Box>
             <Typography variant="h4">{strMeal}</Typography>
