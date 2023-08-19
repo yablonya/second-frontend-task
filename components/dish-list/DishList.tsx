@@ -30,16 +30,10 @@ const DishList: FC<DishListProps> = ({allDishes}) => {
 				))}
 			</Grid>
 
-			{
-				numOfPages > 1 ?
-					<PaginationBlock
-						numOfPages={numOfPages}
-						currentPage={currentPage}
-						setCurrentPage={setCurrentPage}
-					/>
-					:
-					null
-			}
+			{numOfPages > 1 && <PaginationBlock
+				numOfPages={numOfPages}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}/>}
 		</Container>
 	)
 }

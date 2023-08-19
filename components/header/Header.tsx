@@ -6,7 +6,9 @@ import {Typography} from "@mui/material";
 export default function Header() {
   return (
     <header className={styles.wrapper}>
-      <Typography variant="h4" sx={{marginLeft: "115px"}} className={`${styles.puzatka} ${styles.underline_left}`}>Puzata khata</Typography>
+      <Typography variant="h4" sx={{marginLeft: "115px"}} className={`${styles.puzatka} ${styles.underline_left}`}>
+        Puzata khata
+      </Typography>
       <Image
         src={me}
         width={50}

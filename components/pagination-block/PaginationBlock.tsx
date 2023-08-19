@@ -1,11 +1,11 @@
 import styles from "@/components/pagination-block/PaginationBlock.module.css"
-import {FC} from "react";
+import {Dispatch, FC, SetStateAction} from "react";
 import {List, ListItem} from "@mui/material";
 
 interface PaginationBlockProps {
   numOfPages: number,
   currentPage: number,
-  setCurrentPage: object,
+  setCurrentPage: Dispatch<SetStateAction<number>>,
 }
 
 const PaginationBlock:FC<PaginationBlockProps> = ({numOfPages, currentPage, setCurrentPage}) => {

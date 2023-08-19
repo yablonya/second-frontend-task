@@ -11,7 +11,7 @@ interface IngredientsProps {
 const Ingredients: FC<IngredientsProps> = ({ingredients, measures}) => {
 	const ingAndMeas = [];
 
-	for (let i = 0; i < ingredients.length; i++) {
+	for (let i = 0; i < ingredients?.length; i++) {
 		ingAndMeas.push([ingredients[i][1], measures[i][1]])
 	}
 
@@ -27,7 +27,7 @@ const Ingredients: FC<IngredientsProps> = ({ingredients, measures}) => {
 							<ChevronRightRoundedIcon/>
 						</ListItemIcon>
 						<Typography>
-							<b>{item[0]}</b> <span style={{color: "#94979c"}}>{item[1] !== null ? `${item[1]}` : null}</span>
+							<b>{item[0]}</b> <span style={{color: "#94979c"}}>{item[1] && `${item[1]}`}</span>
 						</Typography>
 					</ListItem>
 				))}

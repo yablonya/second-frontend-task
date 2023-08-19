@@ -1,5 +1,3 @@
-'use client'
-
 import styles from "@/components/dish-card/DishCard.module.css";
 import React, {FC} from "react";
 import {Card, CardContent, CardMedia, Typography, Link, createTheme} from "@mui/material";
@@ -26,9 +24,7 @@ const DishCard:FC<CardProps> = ({id, meal, category, mealThumb, tags}) => {
         <CardContent className={styles.dish_card_text}>
           <Typography className={styles.card_header}>{meal}</Typography>
           <Typography><b>Category:</b> {category}</Typography>
-          {tags !== null ?
-            <Typography><b>Tags:</b> {tags.replace(/,/g, ', ')}</Typography>
-            : null}
+          {tags && <Typography><b>Tags:</b> {tags}</Typography>}
         </CardContent>
       </Card>
     </Link>

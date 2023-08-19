@@ -9,7 +9,7 @@ interface RecipeProps {
 const Recipe:FC<RecipeProps> = ({recipe}) => {
   return (
     <Paper elevation={0} className={styles.recipe_block}>
-      <Typography variant="h5" style={{marginBottom: 10}}>Recipe</Typography>
+      <Typography variant="h5" sx={{marginBottom: "10px"}}>Recipe</Typography>
       <Typography>{recipe}</Typography>
     </Paper>
   )

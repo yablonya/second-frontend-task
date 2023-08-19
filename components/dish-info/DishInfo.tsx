@@ -1,7 +1,7 @@
 import styles from "@/components/dish-info/DishInfo.module.css";
 import Ingredients from "@/components/ingredients/Ingredients";
 import Recipe from "@/components/recipe/Recipe";
-import {getListOfParams} from "@/lib/api";
+import {getListOfParams} from "@/utils/ingredients";
 import {Dish} from "@/types/Dish";
 import {FC} from "react";
 import {Box, Container, Grid, Typography} from "@mui/material";
@@ -17,13 +17,13 @@ const DishInfo:FC<DishInfoProps> = ({dish}) => {
 
   return (
     <Container sx={{color: "black"}}>
-      <Grid container column={{sm: 1, md: 2, lg: 2}} rowSpacing={4} columnSpacing={{md: 3, lg: 6}}>
+      <Grid container rowSpacing={4} columnSpacing={{md: 3, lg: 6}}>
         <Grid item sm={12} md={12} lg={4} className={styles.introduce_block} >
           <Box>
             <Typography variant="h4">{strMeal}</Typography>
             <Typography variant="h6">Category: {strCategory}</Typography>
-            {strTags !== null ? <Typography variant="h6"><b>Tags:</b> {strTags.replace(/,/g, ', ')}</Typography> : null}
-            {strArea !== null ? <Typography variant="h6"><b>Area:</b> {strArea}</Typography> : null}
+            {strTags && <Typography variant="h6"><b>Tags:</b> {strTags}</Typography>}
+            {strArea && <Typography variant="h6"><b>Area:</b> {strArea}</Typography>}
           </Box>
         </Grid>
 
