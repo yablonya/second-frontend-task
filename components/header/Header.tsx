@@ -3,7 +3,7 @@ import Image from 'next/image'
 import me from '@/public/ryan gosling.png'
 import {Typography} from "@mui/material";
 
-export default function Header() {
+const Header = () => {
   return (
     <header className={styles.wrapper}>
       <Typography variant="h4" sx={{marginLeft: "115px"}} className={`${styles.puzatka} ${styles.underline_left}`}>
@@ -20,3 +20,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header;
