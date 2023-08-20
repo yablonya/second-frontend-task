@@ -1,3 +1,3 @@
 export const formatTags = (tags: string): string => {
-	return tags?.replace(/,/g, ', ');
+	return tags.replace(/,/g, ', ');
 }

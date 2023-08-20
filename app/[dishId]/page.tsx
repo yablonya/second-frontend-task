@@ -15,14 +15,14 @@ export async function generateMetadata ({params: {dishId}}: Params): Promise<Met
   const dish: Dish = await dishData;
 
   return {
-    title: dish?.strMeal
+    title: dish.strMeal
   }
 }
 
 const DishPage = async ({params: {dishId}}: Params) => {
   const dishData: Promise<Dish> = getDishById(dishId);
   const dish: Dish = await dishData;
-  if (dish?.strTags) {
+  if (dish.strTags) {
     dish.strTags = formatTags(dish.strTags)
   }
 
@@ -34,12 +34,3 @@ const DishPage = async ({params: {dishId}}: Params) => {
 }
 
 export default DishPage;
-
-export async function generateStaticParams() {
-  const allDishesData: Promise<Dish[]> = getAllDishes();
-  const allDishes: Dish[] = await allDishesData;
-
-  return allDishes.map(dish => ({
-    dishId: dish.idMeal
-  }))
-}
